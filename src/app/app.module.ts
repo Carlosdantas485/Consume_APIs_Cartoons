@@ -9,6 +9,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { NarutoReadComponent } from './Views/naruto/naruto-read/naruto-read.component';
 import { HomeComponent } from './Views/home/home.component';
 import { PokemonReadComponent } from './Views/pokemon/pokemon-read/pokemon-read.component';
+import { PokemonCardComponent } from './Views/pokemon/pokemon-card/pokemon-card.component';
+import { PokemonService } from './services/pokemon/pokemon.service';
+import { NarutoService } from './services/naruto/naruto.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NarutoCardComponent } from './Views/naruto/naruto-card/naruto-card.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +23,19 @@ import { PokemonReadComponent } from './Views/pokemon/pokemon-read/pokemon-read.
     NavigationComponent,
     NarutoReadComponent,
     HomeComponent,
-    PokemonReadComponent
+    PokemonReadComponent,
+    PokemonCardComponent,
+    NarutoCardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    PokemonService,
+    NarutoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

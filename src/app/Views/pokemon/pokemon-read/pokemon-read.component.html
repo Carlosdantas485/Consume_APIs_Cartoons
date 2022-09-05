@@ -1,1 +1,7 @@
-<p>pokemon-read works!</p>
+<div class="list-pokemon">
+    <app-pokemon-card
+    *ngFor="let pokemon of pokemonServise.pokemons; index as i"
+    [pokemon]="pokemon"
+    [number]="i + 1"
+    ></app-pokemon-card>
+</div>
